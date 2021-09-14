@@ -1,6 +1,4 @@
-# Humaniq Identity Dap (identity-dap)
-
-A Quasar Framework app
+# Humaniq Dapp template (dapp-template)
 
 ## Install the dependencies
 ```bash

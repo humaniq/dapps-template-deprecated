@@ -9,8 +9,8 @@
           <q-btn v-if='provider.hasProvider' flat
                  :disable='!!provider.currentAccount'
                  icon='fab fa-connectdevelop'
-                 @click='state.connectBtnProps.action'
-                 :label='state.connectBtnProps.label'
+                 @click='view.connectBtnProps.action'
+                 :label='view.connectBtnProps.label'
           />
         </q-toolbar>
       </q-header>
@@ -23,30 +23,11 @@
 </template>
 
 <script setup lang='ts'>
-import { useProviderStore } from 'src/store2/providerStore';
-import { makeAutoObservable } from 'mobx';
+import { LayoutModel } from 'layouts/MainLayoutModel';
+import { useProviderStore } from 'src/store/providerStore';
 
 const provider = useProviderStore();
-void provider.value.init();
-
-class LayoutModel {
-
-  get connectBtnProps() {
-    return {
-      label: provider.value.currentAccount
-        ? `${ provider.value.currentAccount.slice(0, 4) }...${ provider.value.currentAccount.substring(provider.value.currentAccount.length - 4) }`
-        : 'connect',
-      action: provider.value.currentAccount ? () => null : () => {
-        window.ethereum.enable();
-      }
-    };
-  }
-
-  constructor() {
-    makeAutoObservable(this);
-  }
-}
-
-const state = new LayoutModel();
+const view = new LayoutModel();
+view.init();
 
 </script>

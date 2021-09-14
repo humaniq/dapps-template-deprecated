@@ -143,8 +143,8 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: 'Humaniq Identity Dap',
-        short_name: 'Humaniq Identity Dap',
+        name: 'Humaniq Dapp template',
+        short_name: 'Humaniq Dapp template',
         description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
@@ -210,7 +210,7 @@ module.exports = configure(function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'identity-dap'
+        appId: 'dapp-template'
       },
 
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
